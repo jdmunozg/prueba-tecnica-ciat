@@ -7,17 +7,13 @@ import { MenuVerticalComponent } from './components/menu-vertical/menu-vertical.
 import { MenuHorizontalComponent } from './components/menu-horizontal/menu-horizontal.component';
 import { ContentPlagasComponent } from './components/content-plagas/content-plagas.component';
 
-
 @NgModule({
   declarations: [
     DeteccionPlagasComponent,
     MenuVerticalComponent,
     MenuHorizontalComponent,
-    ContentPlagasComponent
+    ContentPlagasComponent,
   ],
-  imports: [
-    CommonModule,
-    DeteccionPlagasRoutingModule
-  ]
+  imports: [CommonModule, DeteccionPlagasRoutingModule],
 })
-export class DeteccionPlagasModule { }
+export class DeteccionPlagasModule {}

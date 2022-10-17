@@ -42,54 +42,20 @@
         id="sidebar-menu"
         style="scroll-behavior: smooth"
       >
-        <li class="has-sub">
+        <li class="has-sub" *ngFor="let item of subCategories.sub">
           <a
             class="sidenav-item-link"
-            href="javascript:void(0)"
-            data-toggle="collapse"
-            data-target="#app"
-            aria-expanded="false"
-            aria-controls="app"
+            id="profile-tab"
+            data-toggle="tab"
+            href="#{{ item.name }}"
+            role="tab"
+            aria-controls="home"
+            aria-selected="false"
           >
             <i class="mdi mdi-pencil-box-multiple"></i>
-            <span class="nav-text">App</span> <b class="caret"></b>
+            <span class="nav-text">{{ item.name }}</span>
+            <b class="caret"></b>
           </a>
-
-          <ul class="collapse" id="app" data-parent="#sidebar-menu">
-            <div class="sub-menu">
-              <li class="">
-                <a
-                  class="sidenav-item-link"
-                  id="profile-tab"
-                  data-toggle="tab"
-                  href="#profile"
-                  role="tab"
-                  aria-controls="profile"
-                  aria-selected="false"
-                >
-                  <span class="nav-text">Chat</span>
-                </a>
-              </li>
-
-              <li class="">
-                <a class="sidenav-item-link" href="contacts.html">
-                  <span class="nav-text">Contacts</span>
-                </a>
-              </li>
-
-              <li class="">
-                <a class="sidenav-item-link" href="team.html">
-                  <span class="nav-text">Team</span>
-                </a>
-              </li>
-
-              <li class="">
-                <a class="sidenav-item-link" href="calendar.html">
-                  <span class="nav-text">Calendar</span>
-                </a>
-              </li>
-            </div>
-          </ul>
         </li>
       </ul>
     </div>

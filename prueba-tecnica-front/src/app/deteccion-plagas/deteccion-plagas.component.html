@@ -1,5 +1,10 @@
-<app-menu-vertical></app-menu-vertical>
+<app-menu-vertical
+  [subCategories]="informacionMenuVertical"
+></app-menu-vertical>
 <div class="page-wrapper">
-  <app-menu-horizontal></app-menu-horizontal>
-  <app-content-plagas></app-content-plagas>
+  <app-menu-horizontal (information)="getMensaje($event)"></app-menu-horizontal>
+  <app-content-plagas
+    *ngIf="informacionComp == 'plaga' || informacionComp == undefined"
+    [subCategories]="informacionMenuVertical"
+  ></app-content-plagas>
 </div>

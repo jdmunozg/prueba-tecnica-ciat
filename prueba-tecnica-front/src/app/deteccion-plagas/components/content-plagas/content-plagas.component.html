@@ -3,57 +3,68 @@
     <div class="col-lg-19" style="width: 100%">
       <div class="card card-default" style="width: 100%">
         <div class="card-header card-header-border-bottom">
-          <h2>Default Tabs</h2>
+          <h1 style="color: black">Plagas</h1>
         </div>
 
         <div class="card-body">
-          <p class="mb-5">
-            Takes the basic nav and adds the <code>.nav-tabs</code> class to
-            generate a tabbed interface. Use them to create tabbable regions
-            with our tab
-            <a
-              href="https://getbootstrap.com/docs/4.6/components/navs/#javascript-behavior"
-              target="_blank"
-              >JavaScript plugin.</a
-            >
+          <h3 style="color: black">Informacion sobre las plagas</h3>
+          <br />
+          <p>
+            Se llama plaga a cualquier ser vivo que resulta perjudicial para
+            otro ser vivo de interés para el ser humano. Existen plagas de
+            interés sanitario, tales como los vectores de enfermedades humanas y
+            animales, tales como, mosquitos, pulgas o garrapatas, y las plagas
+            agrícolas que afectan las plantas cultivadas, así como las cosechas,
+            ya sean frescas o almacenadas.
           </p>
-
           <div class="tab-content" id="myTabContent1">
             <div
-              class="tab-pane pt-3 fade show active"
-              id="home"
+              *ngFor="let item of subCategories.sub"
+              class="tab-pane pt-3 fade"
+              id="{{ item.name }}"
               role="tabpanel"
               aria-labelledby="home-tab"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
-            </div>
+              <h3 style="color: black">{{ item.tipo }}</h3>
+              <div
+                class="card card-default"
+                style="border: 0"
+                *ngIf="item.name == 'Informacion'"
+              >
+                <div class="card-body">
+                  <div class="row">
+                    <div
+                      class="col-md-10 col-xl-6"
+                      *ngFor="let item of informacion"
+                    >
+                      <div class="card mb-4">
+                        <img
+                          class="card-img-top"
+                          src="assets/img/elements/cc1.jpg"
+                        />
 
-            <div
-              class="tab-pane pt-3 fade"
-              id="profile"
-              role="tabpanel"
-              aria-labelledby="profile-tab"
-            >
-              hola.
-            </div>
+                        <div class="card-body">
+                          <h5 class="card-title text-primary">
+                            {{ item.nombre }}
+                          </h5>
 
-            <div
-              class="tab-pane pt-3 fade"
-              id="contact"
-              role="tabpanel"
-              aria-labelledby="contact-tab"
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
+                          <p class="card-text pb-3">
+                            <span style="color: black; font-weight: 500"
+                              >Nombre cientifico:</span
+                            >
+                            {{ item.nombre_cientifico }}
+                            <br />
+                            <span style="color: black; font-weight: 500"
+                              >Forma de controlar:</span
+                            >
+                            {{ item.forma_control }}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
