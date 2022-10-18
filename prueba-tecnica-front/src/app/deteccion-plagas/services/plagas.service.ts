@@ -12,4 +12,10 @@ export class PlagasService {
   getAllPlaga() {
     return this.http.get(`${this.urlApi}plaga`);
   }
+  getAllZona() {
+    return this.http.get(`${this.urlApi}zona`);
+  }
+  getAllPalmera() {
+    return this.http.get(`${this.urlApi}palmera`);
+  }
 }

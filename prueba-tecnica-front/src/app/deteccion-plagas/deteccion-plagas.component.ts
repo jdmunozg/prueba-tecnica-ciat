@@ -9,7 +9,9 @@ import { menu } from './metadata/info-menu-plaga';
 export class DeteccionPlagasComponent implements OnInit {
   informacionComp: any;
   informacionMenuVertical: any;
-  constructor() {
+  constructor() {}
+
+  ngOnInit(): void {
     let aux = menu;
     if (this.informacionComp == undefined) {
       aux.find((x: any) => {
@@ -19,8 +21,6 @@ export class DeteccionPlagasComponent implements OnInit {
       });
     }
   }
-
-  ngOnInit(): void {}
   getMensaje(e: any) {
     let aux = menu;
     this.informacionComp = e;

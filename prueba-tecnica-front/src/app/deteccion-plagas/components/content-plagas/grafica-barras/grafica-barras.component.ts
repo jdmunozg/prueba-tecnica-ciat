@@ -25,6 +25,8 @@ export class GraficaBarrasComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    console.log(this.labelsInfo);
+    console.log(this.infonumber);
     this.barChartData.labels = this.labelsInfo;
     this.barChartData.datasets = this.infonumber;
   }

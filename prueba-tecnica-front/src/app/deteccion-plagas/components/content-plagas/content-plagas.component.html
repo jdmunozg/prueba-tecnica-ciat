@@ -1,4 +1,8 @@
-<div class="content-wrapper">
+<div
+  style="width: 100%; height: 100vh; background-color: red"
+  *ngIf="estado == true"
+></div>
+<div class="content-wrapper" *ngIf="estado != true">
   <div class="content">
     <div class="col-lg-19">
       <div class="card card-default">
