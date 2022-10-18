@@ -12,6 +12,7 @@ import { ContentZonaComponent } from './components/content-zona/content-zona.com
 import { GraficaTortaZonaComponent } from './components/content-zona/grafica-torta-zona/grafica-torta-zona.component';
 import { GraficaBarraZonaComponent } from './components/content-zona/grafica-barra-zona/grafica-barra-zona.component';
 import { GraficaBarraPlagaZonaComponent } from './components/content-zona/grafica-barra-plaga-zona/grafica-barra-plaga-zona.component';
+import { ContentPalmaComponent } from './components/content-palma/content-palma.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { GraficaBarraPlagaZonaComponent } from './components/content-zona/grafic
     GraficaTortaZonaComponent,
     GraficaBarraZonaComponent,
     GraficaBarraPlagaZonaComponent,
+    ContentPalmaComponent,
   ],
   imports: [CommonModule, DeteccionPlagasRoutingModule, NgChartsModule],
 })

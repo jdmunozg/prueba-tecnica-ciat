@@ -1,0 +1,84 @@
+<div class="content-wrapper">
+  <div class="content">
+    <div class="col-lg-19">
+      <div class="card card-default">
+        <div class="card-header card-header-border-bottom">
+          <h1 style="color: black">Palmeras</h1>
+        </div>
+
+        <div class="card-body">
+          <h3 style="color: black">Informacion sobre las Palmeras</h3>
+          <br />
+          <p>
+            De acuerdo a algunos botánicos es de origen asiático, en las zonas
+            de la India, Ceilan e Indonesia. Sin embargo, otros señalan que
+            puede tener un origen en el Caribe o islas de clima tropical y
+            subtropical del océano Pacífico. La gran mayoría sostiene que es
+            originario de Asía y se cree que desde allí se diseminó a las costas
+            con clima cálido y húmedo, adentrándose hacia los continentes.
+            Algunos registros fósiles de plantas similares al coco se han
+            encontrado en Nueva Zelanda, la India y Bangladesh
+          </p>
+          <div class="tab-content" id="myTabContent1">
+            <div
+              *ngFor="let item of subCategories.sub"
+              class="tab-pane pt-3 fade"
+              id="{{ item.name }}"
+              role="tabpanel"
+              aria-labelledby="home-tab"
+            >
+              <h3 style="color: black">{{ item.tipo }}</h3>
+              <div
+                class="card card-default"
+                style="border: 0"
+                *ngIf="item.name == 'Informacion'"
+              >
+                <div class="card-body">
+                  <div class="row">
+                    <div
+                      class="col-md-10 col-xl-6"
+                      *ngFor="let item of informacion"
+                    >
+                      <div class="card mb-4">
+                        <img
+                          class="card-img-top"
+                          src="assets/img/cocotero.jpg"
+                        />
+
+                        <div class="card-body">
+                          <h5 class="card-title text-primary">
+                            {{ item.nombre }}
+                          </h5>
+
+                          <p class="card-text pb-3">
+                            <span style="color: black; font-weight: 500"
+                              >Descripcion:</span
+                            >
+                            {{ item.descripcion }}
+                            <br />
+                            <span style="color: black; font-weight: 500"
+                              >Plaga:</span
+                            >
+                            <span *ngIf="item.id_plaga != null">{{
+                              item.id_plaga.nombre
+                            }}</span>
+                            <span *ngIf="item.id_plaga == null">Sin Plaga</span>
+                            <br />
+                            <span style="color: black; font-weight: 500"
+                              >Cultivo:</span
+                            >
+                            {{ item.id_zona.nombre }}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
