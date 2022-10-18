@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { palma } from '../content-zona/metadata';
+import { PlagasService } from '../../services/plagas.service';
 
 @Component({
   selector: 'app-content-palma',
@@ -9,10 +9,16 @@ import { palma } from '../content-zona/metadata';
 export class ContentPalmaComponent implements OnInit {
   @Input() subCategories: any;
   informacion: any;
-  constructor() {}
+  estado: boolean = true;
+  constructor(private _plagasServices: PlagasService) {}
 
   ngOnInit(): void {
-    this.informacion = palma;
-    console.log(this.informacion);
+    this._plagasServices.getAllPalmera().subscribe((resp) => {
+      this.informacion = resp;
+    });
+
+    setTimeout(() => {
+      this.estado = false;
+    }, 2000);
   }
 }
