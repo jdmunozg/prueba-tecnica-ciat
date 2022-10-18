@@ -1,7 +1,7 @@
-<div class="content-wrapper" style="width: 80vw">
+<div class="content-wrapper">
   <div class="content">
-    <div class="col-lg-19" style="width: 100%">
-      <div class="card card-default" style="width: 100%">
+    <div class="col-lg-19">
+      <div class="card card-default">
         <div class="card-header card-header-border-bottom">
           <h1 style="color: black">Plagas</h1>
         </div>
@@ -63,6 +63,33 @@
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+              <div
+                class="card card-default"
+                style="border: 0"
+                *ngIf="item.name == 'Estadisticas'"
+              >
+                <div
+                  class="card-body"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                >
+                  <h4>Conteo apareciones de plagas.</h4>
+                  <app-grafica-torta
+                    [pieChartDatasets]="pieChartDatasets"
+                    [pieChartLabels]="pieChartLabels"
+                  ></app-grafica-torta>
+                  <br />
+                  <h4>Conteo por apareciones en cultivos.</h4>
+                  <app-grafica-barras
+                    [labelsInfo]="pieChartLabels"
+                    [infonumber]="infoData"
+                  ></app-grafica-barras>
                 </div>
               </div>
             </div>
