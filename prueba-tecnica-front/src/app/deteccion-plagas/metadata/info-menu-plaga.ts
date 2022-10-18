@@ -17,11 +17,11 @@ export const menu = [
     sub: [
       {
         name: 'Informacion',
-        tipo: 'Estadisticas de plagas',
+        tipo: 'Cultivos',
       },
       {
         name: 'Estadisticas',
-        tipo: 'Estadisticas de plagas',
+        tipo: 'Estadistica de cultivos',
       },
     ],
   },

@@ -8,6 +8,10 @@ import { MenuHorizontalComponent } from './components/menu-horizontal/menu-horiz
 import { ContentPlagasComponent } from './components/content-plagas/content-plagas.component';
 import { GraficaBarrasComponent } from './components/content-plagas/grafica-barras/grafica-barras.component';
 import { GraficaTortaComponent } from './components/content-plagas/grafica-torta/grafica-torta.component';
+import { ContentZonaComponent } from './components/content-zona/content-zona.component';
+import { GraficaTortaZonaComponent } from './components/content-zona/grafica-torta-zona/grafica-torta-zona.component';
+import { GraficaBarraZonaComponent } from './components/content-zona/grafica-barra-zona/grafica-barra-zona.component';
+import { GraficaBarraPlagaZonaComponent } from './components/content-zona/grafica-barra-plaga-zona/grafica-barra-plaga-zona.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +21,10 @@ import { GraficaTortaComponent } from './components/content-plagas/grafica-torta
     ContentPlagasComponent,
     GraficaBarrasComponent,
     GraficaTortaComponent,
+    ContentZonaComponent,
+    GraficaTortaZonaComponent,
+    GraficaBarraZonaComponent,
+    GraficaBarraPlagaZonaComponent,
   ],
   imports: [CommonModule, DeteccionPlagasRoutingModule, NgChartsModule],
 })

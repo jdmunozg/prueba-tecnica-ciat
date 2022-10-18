@@ -1,0 +1,114 @@
+<div class="content-wrapper">
+  <div class="content">
+    <div class="col-lg-19">
+      <div class="card card-default">
+        <div class="card-header card-header-border-bottom">
+          <h1 style="color: black">Cultivos</h1>
+        </div>
+
+        <div class="card-body">
+          <h3 style="color: black">Informacion sobre los cultivos</h3>
+          <br />
+          <p>
+            El cocotero o árbol de coco, denominado científicamente como “Cocos
+            nucifera” es una prodigiosa planta única en su género. Esta, se
+            caracteriza por adaptarse muy bien a las hostiles condiciones
+            existentes en los ecosistemas costeros; tales como suelos arenosos y
+            poco fertiles, ademas de la permanete presencia del agua salada.
+            Asimismo, esta planta junto con su fruto (el coco) es uno de los
+            elementos más representativos de la cultura nativa en las costas de
+            casi todas las playas del mundo; se puede afirmar que prácticamente
+            todos los paisajes tropicales del planeta están asociados a su
+            presencia de la misma manera que la arena o el mar. Es de resaltar
+            que el cocotero también ha sido denominado "el árbol de la vida" por
+            sus múltiples usos. Entorno a esta planta se ha desarrollado una
+            cultura muy interesante, principalmente impulsada por su fruto único
+            y exótico, del cual se pueden obtener numerosos productos como
+            aceite, pulpa y agua rica en electrolitos. Sin mencionar todas las
+            artesanías que se puede desarrollar con su concha o cascacara, que
+            puede servir incluso para la obtención de biocombustible.
+          </p>
+          <div class="tab-content" id="myTabContent1">
+            <div
+              *ngFor="let item of subCategories.sub"
+              class="tab-pane pt-3 fade"
+              id="{{ item.name }}"
+              role="tabpanel"
+              aria-labelledby="home-tab"
+            >
+              <h3 style="color: black">{{ item.tipo }}</h3>
+              <div
+                class="card card-default"
+                style="border: 0"
+                *ngIf="item.name == 'Informacion'"
+              >
+                <div class="card-body">
+                  <div class="row">
+                    <div
+                      class="col-md-10 col-xl-6"
+                      *ngFor="let item of informacion"
+                    >
+                      <div class="card mb-4">
+                        <img
+                          class="card-img-top"
+                          src="assets/img/elements/cc1.jpg"
+                        />
+
+                        <div class="card-body">
+                          <h5 class="card-title text-primary">
+                            {{ item.nombre }}
+                          </h5>
+
+                          <p class="card-text pb-3">
+                            <span style="color: black; font-weight: 500"
+                              >Descripcion:</span
+                            >
+                            {{ item.descripcion }}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card card-default"
+                style="border: 0"
+                *ngIf="item.name == 'Estadisticas'"
+              >
+                <div
+                  class="card-body"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                >
+                  <h4>Conteo de palmaras por zona</h4>
+                  <app-grafica-torta-zona
+                    [pieChartDatasets]="pieChartDatasets"
+                    [pieChartLabels]="pieChartLabels"
+                  ></app-grafica-torta-zona>
+                  <br />
+                  <h4>Conteo de palmas con plagas o sanas</h4>
+                  <app-grafica-barra-zona
+                    [labelsInfo]="pieChartLabels"
+                    [infonumber]="infoData"
+                  ></app-grafica-barra-zona>
+                  <br />
+                  <h4>Conteo de palmas con plaga (Agrupadas por plaga)</h4>
+                  <app-grafica-barra-plaga-zona
+                    [labelsInfo]="pieChartLabels"
+                    [infonumber]="infoDataDos"
+                  >
+                  </app-grafica-barra-plaga-zona>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

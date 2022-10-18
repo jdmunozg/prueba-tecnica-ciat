@@ -7,4 +7,8 @@
     *ngIf="informacionComp == 'plaga' || informacionComp == undefined"
     [subCategories]="informacionMenuVertical"
   ></app-content-plagas>
+  <app-content-zona
+    *ngIf="informacionComp == 'cultivo'"
+    [subCategories]="informacionMenuVertical"
+  ></app-content-zona>
 </div>
